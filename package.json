@@ -1,11 +1,21 @@
 {
   "name": "virtual-assistant-bot",
-  "version": "0.0.1",
+  "version": "0.1",
   "description": "Telegram Bot",
+  
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+   "routes": [
+    { "src": "/.*", "dest": "index.js" }
+  ],
+  "env": {
+    "TELEGRAM_TOKEN": "@telegram-token"
+  },
+  "builds": [
+    { "src": "index.js", "use": "@now/node" }
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
